@@ -1,5 +1,5 @@
 `CircE.Plot` <-
-function(object,pchar=NULL,bg.points="red",ef=0.4,big.points=10,big.labels=10,bg.plot="gray80",col.axis="black",color="black",col.text="white",twodim=TRUE,bound=TRUE,labels=TRUE){
+function(object,pchar=NULL,bg.points="red",ef=0.4,big.points=10,big.labels=10,bg.plot="gray80",col.axis="black",color="black",col.text="white",twodim=TRUE,bound=TRUE,labels=TRUE,reverse=FALSE){
 	
 	
 
@@ -66,7 +66,8 @@ segments(rep(0,length(low)),rep(0,length(low)),cos(low*K)*max(com.ind),sin(low*K
 }
 angular.points=matrix(0,dim(object$R)[1],2)
 for(i in 1:dim(object$R)[1]){
-   angular.points[i,]=c(cos(K*object$coeff[i,1]),sin(K*object$coeff[i,1]))
+   if(reverse==FALSE){angular.points[i,]=c(cos(K*object$coeff[i,1]),sin(K*object$coeff[i,1]))}
+   if(reverse==TRUE){angular.points[i,]=c(cos(K*(360-object$coeff[i,1])),sin(K*(360-object$coeff[i,1])))}   
              }
 row.names(angular.points)=object$v.names
 if(labels==TRUE){

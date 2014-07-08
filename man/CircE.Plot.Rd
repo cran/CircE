@@ -8,7 +8,7 @@
 \usage{
 CircE.Plot(object, pchar = NULL, bg.points = "red", ef = 0.4, big.points = 10, 
 	   big.labels = 10, bg.plot = "gray80", col.axis = "black", color = "black", 
-	   col.text = "white",twodim=TRUE,bound=TRUE,labels=TRUE)
+	   col.text = "white",twodim=TRUE,bound=TRUE,labels=TRUE,reverse=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,6 +24,7 @@ CircE.Plot(object, pchar = NULL, bg.points = "red", ef = 0.4, big.points = 10,
   \item{twodim}{ logical. If \code{FALSE} (default), two reference axes are drawn.}
   \item{bound}{ logical. If arguments \code{upper} and \code{lower} in \code{object} are not NULL, the bound lines are drawn on the circumference. Default is \code{TRUE}. }
   \item{labels}{ logical. If \code{TRUE} (default), variable labels are reported in the plot.}
+  \item{reverse}{ logical. If \code{TRUE}, plot the figure using the 360-angular positions (just reversing the circular order).}
 }
 \author{ Michele Grassi \email{grassi.mic@gmail.com}}
 \seealso{ See Also \code{\link{plot}}, \code{\link{points}}, \code{\link{par}}. }
